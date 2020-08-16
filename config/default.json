@@ -1,0 +1,4 @@
+{
+  "db": "mongodb+srv://sergey:sergey123@cluster0-kvfvp.mongodb.net/carsale?retryWrites=true&w=majority",
+  "secret": "this is our secret"
+}
