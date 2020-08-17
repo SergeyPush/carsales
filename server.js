@@ -26,6 +26,7 @@ app.use("/api/cars", require("./routes/carsRoutes"));
 app.use("/api/user", require("./routes/userRoutes"));
 
 const PORT = process.env.PORT || 5000;
+const YOUR_HOST = process.env.YOUR_HOST || "0.0.0.0";
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "client", "build")));
   app.get("*", (req, res) => {
@@ -43,7 +44,7 @@ const start = async () => {
     });
     console.log("DB connected");
 
-    app.listen(PORT, () => {
+    app.listen(PORT, YOUR_HOST, () => {
       console.log(`App is running on port ${PORT}`);
     });
   } catch (error) {
